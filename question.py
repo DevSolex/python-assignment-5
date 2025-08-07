@@ -151,4 +151,12 @@ elif command == 'register':
 				balance = balance - verification_amount
 				user2.update({'balance': balance})
 				print(f'your account has been verified and this is your current status:\n{user2}')
+			else:
+				print('INSUFFICIENT FUND!')
+		elif get_verified == 'no':
+			print(f'REGISTRATION SUCCESSFUL:\n{user2}')
+		else:
+			print('INVALID OPTION!')
+else:
+	print('INVALID COMMAND!')
 
