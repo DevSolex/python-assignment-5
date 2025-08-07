@@ -107,7 +107,7 @@ This assignment tests your understanding of:
 # TODO: Implement the login and registration portal system based on the requirements above
 
 verification_amount = 1500
-users_db = [{'name': 'solex', 'password': 'solex202', 'balance': 500000, 'is_verified': False}]            # Initialize user database with appropraite data-type
+users_db = [{'name': 'solex', 'password': 'solex202', 'balance': 500000, 'is_verified': True}]            # Initialize user database with appropraite data-type
 
 output = """
    *---------------------------------------*
@@ -150,9 +150,9 @@ elif command == 'register':
 				user2.update({'is_verified': True })
 				balance = balance - verification_amount
 				user2.update({'balance': balance})
-				print(f'your account has been verified and this is your current status:\n{user2}')
+				print(f'LOGIN SUCCESSFUL\nYour account has been verified and this is your current status:\n{user2}')
 			else:
-				print('INSUFFICIENT FUND!')
+				print(f'INSUFFICIENT FUND!\nLOGIN SUCCESSFUL\n{user2}')
 		elif get_verified == 'no':
 			print(f'REGISTRATION SUCCESSFUL:\n{user2}')
 		else:
