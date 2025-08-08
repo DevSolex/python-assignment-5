@@ -107,7 +107,9 @@ This assignment tests your understanding of:
 # TODO: Implement the login and registration portal system based on the requirements above
 
 verification_amount = 1500
-users_db = [{'name': 'solex', 'password': 'solex202', 'balance': 500000, 'is_verified': True}]            # Initialize user database with appropraite data-type
+users_db = {
+'user1': {'name': 'solex', 'password': 'solex202', 'balance': 500000, 'is_verified': True},
+}# Initialize user database with appropraite data-type
 
 output = """
    *---------------------------------------*
@@ -125,11 +127,11 @@ command = input(output)
 if command == 'login':
 	user_name = input('Enter user name: ')
 	password = input('Enter password: ')
-	if user_name == users_db[0]['name'] and password == users_db[0]['password']:
-		print(f'SUCCESSFUL LOGIN \n{users_db}')
-	elif user_name == users_db[0]['name'] and password != users_db[0]['password']:
+	if user_name == users_db['user1']['name'] and password == users_db['user1']['password']:
+		print(f'SUCCESSFUL LOGIN \n{users_db["user1"]}')
+	elif user_name == users_db['user1']['name'] and password != users_db['user1']['password']:
 		print('WRONG PASSWORD')
-	elif password == users_db[0]['password'] and user_name != users_db[0]['name']:
+	elif password == users_db['user1']['password'] and user_name != users_db['user1']['name']:
 		print('INVALID USER NAME')
 	else:
 		print('INVALID INFORMATION!')	
@@ -138,7 +140,7 @@ elif command == 'register':
 	create_password = input('Create a password: ')
 	balance = float(input('Enter balance: '))
 	is_verified = False
-	if user_name == users_db[0]['name']:
+	if user_name == users_db['user1']['name']:
 		print('USERNAME ALREADY EXIST!')
 	else:
 		user2 = {'name': user_name ,'password': create_password , 'balance': balance , 'is_verified': is_verified}
